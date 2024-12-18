@@ -6,23 +6,14 @@ using System.Threading.Tasks;
 
 namespace MathGame
 {
-    internal class Operaciones : Program
+    internal class Operaciones
     {
         int resultadoCorrecto;
         int num1;
         int num2;
         string resultado;
-
-        //public Operaciones(int _num1, int _num2, string _resulado)
-        //{
-        //    num1 = _num1;
-        //    num2 = _num2;
-        //    resultado = _resulado;
-        //}
-
-
-
-        public void Addition(string message, List<string> games)
+        static List<string> games = new();
+        public void Addition(string message)
         {
             Menu menu = new Menu();
             Console.Clear();
@@ -64,9 +55,9 @@ namespace MathGame
                 } 
                 
             }
-            menu.GetHistory(games, "Addition", scoreCount);
+            Helpers.GetHistory("Addition", scoreCount);
         }
-        public void Subtrac(string message, List<string> games)
+        public void Subtrac(string message)
         {
             Menu menu = new Menu();
             Console.Clear ();
@@ -107,10 +98,10 @@ namespace MathGame
 
 
             }
-            menu.GetHistory(games, "Subtraction", scoreCount);
+            Helpers.GetHistory("Subtraction", scoreCount);
         }
 
-        public void Multiply(string message, List<string> games)
+        public void Multiply(string message)
         {
             Menu menu = new Menu();
             Console.Clear ();
@@ -148,10 +139,10 @@ namespace MathGame
                     Console.WriteLine("Game over" + $" Puntaje total {scoreCount}");
                 }
             }
-            menu.GetHistory(games, "Subtraction", scoreCount);
+            Helpers.GetHistory("Subtraction", scoreCount);
         }
 
-        public void Divide(string message, List<string> games)
+        public void Divide(string message)
         {
             Menu menu = new Menu();
             Console.Clear ();
@@ -193,7 +184,7 @@ namespace MathGame
 
             }
 
-            menu.GetHistory(games, "Division", scoreCount);
+            Helpers.GetHistory("Division", scoreCount);
 
 
             int[] DivideNumbers()

@@ -9,7 +9,7 @@ namespace MathGame
             menu.GetName();
             var games = new List<string>();
           
-            menu.MainMenu(games);
+            menu.MainMenu();
         }
 
 
