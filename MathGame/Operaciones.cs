@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MathGame.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,7 @@ namespace MathGame
 
                 Console.WriteLine($"{num1} + {num2}");
                 var input = Console.ReadLine();
+                input = Helpers.ValidationGame(input);
                 resultadoCorrecto = num1 + num2;
 
                 if (resultadoCorrecto != int.Parse(input))
@@ -55,7 +57,7 @@ namespace MathGame
                 } 
                 
             }
-            Helpers.GetHistory("Addition", scoreCount);
+            Helpers.GetHistory(GameType.Addition, scoreCount);
         }
         public void Subtrac(string message)
         {
@@ -72,6 +74,7 @@ namespace MathGame
 
                 Console.WriteLine($"{num1} - {num2}");
                 var input = Console.ReadLine();
+                input = Helpers.ValidationGame(input);
                 resultadoCorrecto = num1 - num2;
 
                 if (resultadoCorrecto != int.Parse(input))
@@ -98,7 +101,7 @@ namespace MathGame
 
 
             }
-            Helpers.GetHistory("Subtraction", scoreCount);
+            Helpers.GetHistory(GameType.Subtractio, scoreCount);
         }
 
         public void Multiply(string message)
@@ -115,6 +118,7 @@ namespace MathGame
 
                 Console.WriteLine($"{num1} x {num2}");
                 var input = Console.ReadLine();
+                input = Helpers.ValidationGame(input);
                 resultadoCorrecto = num1 * num2;
 
                 if (resultadoCorrecto != int.Parse(input))
@@ -139,7 +143,7 @@ namespace MathGame
                     Console.WriteLine("Game over" + $" Puntaje total {scoreCount}");
                 }
             }
-            Helpers.GetHistory("Subtraction", scoreCount);
+            Helpers.GetHistory(GameType.Multiplication, scoreCount);
         }
 
         public void Divide(string message)
@@ -157,6 +161,7 @@ namespace MathGame
 
                 Console.WriteLine($"{num1} / {num2}");
                 var input = Console.ReadLine();
+                input = Helpers.ValidationGame(input);
                 resultadoCorrecto = num1 / num2;
 
                 if (resultadoCorrecto != int.Parse(input))
@@ -184,7 +189,7 @@ namespace MathGame
 
             }
 
-            Helpers.GetHistory("Division", scoreCount);
+            Helpers.GetHistory(GameType.Division, scoreCount);
 
 
             int[] DivideNumbers()

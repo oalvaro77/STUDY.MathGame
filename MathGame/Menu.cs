@@ -25,6 +25,7 @@ namespace MathGame
 
                 Console.WriteLine("Seleccionar una operacion: ");
                 string input = Console.ReadLine();
+                input = Helpers.ValidationGame(input);
                 Operaciones operaciones = new Operaciones();
                 switch (input)
                 {
@@ -73,6 +74,10 @@ namespace MathGame
         {
             Console.WriteLine("Welcome, enter your name:");
             string name = Console.ReadLine();
+            while (string.IsNullOrEmpty(name)){
+                Console.WriteLine("The name is invalide");
+                name = Console.ReadLine();
+            }
             Console.WriteLine($"{name} has register at {DateTime.Now}");
 
 
